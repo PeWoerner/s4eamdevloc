@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../dsc/s4eam_devloc_srv/$metadata">
+        <edmx:Include Namespace="S4EAM_DEVLOC_SRV" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.dsc.s4eam_devloc_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/DeviceLocation">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/PeriodSqNum">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/AddressID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/removeDevice_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/replaceDevice_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/reverseInstall_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/reverseReplacement_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Gerätedaten"/>
+                            <PropertyValue Property="ID" String="Fieldgroup-EQ"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#DeviceDetails"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Adresse"/>
+                            <PropertyValue Property="ID" String="Fieldgroup-Addr"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#AddressFields"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Klasse(n)"/>
+                            <PropertyValue Property="ID" String="Table-Classes"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_Classes/@UI.LineItem"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Klassifizierung"/>
+                            <PropertyValue Property="ID" String="Table-Characteristics"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_Characs/@UI.LineItem"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Messpunkte"/>
+                            <PropertyValue Property="ID" String="Table-MP"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_MPoint/@UI.LineItem"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Admin-Daten"/>
+                            <PropertyValue Property="ID" String="Fieldgroup-Admin"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FieldgroupAdmin"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="AddressFields">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Land"/>
+                                    <PropertyValue Property="Value" Path="Country"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Region"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="PostalCode"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CityName"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="StreetName"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="HouseNumber"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="DeviceDetails">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Equipment"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SerialNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Material"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="ValidityStartDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="ValidityEndDate"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="FieldgroupAdmin">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreatedBy"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreatedAt"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastChangedBy"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastChangeDateTime"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Gerät"/>
+                        <PropertyValue Property="TypeNamePlural" String="Geräte"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Geräte"/>
+                                <PropertyValue Property="Value" Path="Equipment"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Equipment"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SerialNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Material"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Land"/>
+                            <PropertyValue Property="Value" Path="Country"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Region"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PostalCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CityName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="StreetName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValidityStartDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="HouseNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValidityEndDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Angelegt von"/>
+                            <PropertyValue Property="Value" Path="CreatedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Angelegt am"/>
+                            <PropertyValue Property="Value" Path="CreatedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Geändert von"/>
+                            <PropertyValue Property="Value" Path="LastChangedBy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Letzte Änderung"/>
+                            <PropertyValue Property="Value" Path="LastChangeDateTime"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerät ausbauen"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/removeDevice"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerät wechseln"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/replaceDevice"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerätein-/ausbau stornieren"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/reverseInstall"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerätewechsel stornieren"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/reverseReplacement"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Equipment"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SerialNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Material"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValidityStartDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValidityEndDate"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerätewechsel stornieren"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/reverseReplacement"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerätein-/ausbau stornieren"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/reverseInstall"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerät wechseln"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/replaceDevice"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerät ausbauen"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/removeDevice"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>CityName</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType/FunctionalLocationCategory">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType/AddressID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType/installDevice_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Geräteplatz"/>
+                            <PropertyValue Property="ID" String="Fieldgroup-FL"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#DetailsDL"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Adresse"/>
+                            <PropertyValue Property="ID" String="Fieldgroup-Addr"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#AddressFields"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Klasse(n)"/>
+                            <PropertyValue Property="ID" String="Table-Classes"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_Classes/@UI.LineItem"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Klassifizierung"/>
+                            <PropertyValue Property="ID" String="Table-Characteristics"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_Characs/@UI.LineItem"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Geräte"/>
+                            <PropertyValue Property="ID" String="Devices"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_Device/@UI.LineItem"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Admin-Daten"/>
+                            <PropertyValue Property="ID" String="Fieldgroup-Admin"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FieldgroupAdmin"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="AddressFields">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Land"/>
+                                    <PropertyValue Property="Value" Path="Country"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Region"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="PostalCode"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CityName"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="StreetName"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="HouseNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="HouseNumberSupplementText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="DetailsDL">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="FunctionalLocation"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="TechnicalObjectType"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="SuperiorFunctionalLocation"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="StartDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Beschreibung"/>
+                                    <PropertyValue Property="Value" Path="ObjectText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="FieldgroupAdmin">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreatedByUser"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreationDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastChangedByUser"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastChangeDateTime"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Geräteplatz"/>
+                        <PropertyValue Property="TypeNamePlural" String="Geräteplätze"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Geräteplatz"/>
+                                <PropertyValue Property="Value" Path="FunctionalLocation"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FunctionalLocation"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TechnicalObjectType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SuperiorFunctionalLocation"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="StartDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Beschreibung"/>
+                            <PropertyValue Property="Value" Path="ObjectText"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Land"/>
+                            <PropertyValue Property="Value" Path="Country"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Region"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PostalCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CityName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="StreetName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="HouseNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="HouseNumberSupplementText"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Angelegt von"/>
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Angelegt am"/>
+                            <PropertyValue Property="Value" Path="CreationDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Geändert von"/>
+                            <PropertyValue Property="Value" Path="LastChangedByUser"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Letzte Änderung"/>
+                            <PropertyValue Property="Value" Path="LastChangeDateTime"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerät einbauen"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/installDevice"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FunctionalLocation"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TechnicalObjectType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SuperiorFunctionalLocation"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="StartDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Beschreibung"/>
+                            <PropertyValue Property="Value" Path="ObjectText"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PostalCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CityName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="StreetName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="HouseNumber"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Gerät einbauen"/>
+                            <PropertyValue Property="Action" String="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/installDevice"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="LastChangeDateTime"/>
+                                    <PropertyValue Property="Descending" Bool="true"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>FunctionalLocation</PropertyPath>
+                        <PropertyPath>TechnicalObjectType</PropertyPath>
+                        <PropertyPath>CityName</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/Equipment">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/DeviceLocation">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/ValidityEndDate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/ObjectId">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/ClassType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/Atinn">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/DataType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/FieldLen">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/Decimals">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/ValueDecFrom">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType/ValueDecTo">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Merkmale"/>
+                            <PropertyValue Property="ID" String="Characs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Merkmal"/>
+                        <PropertyValue Property="TypeNamePlural" String="Merkmale"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Klassenmerkmal"/>
+                                <PropertyValue Property="Value" Path="CharacName"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CharacName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CharacDescription"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValueChar"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Merkmal"/>
+                            <PropertyValue Property="Value" Path="CharacInfo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValueChar"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/ObjectId">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/ClassType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/Atinn">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/DataType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/FieldLen">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/Decimals">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/ValueDecFrom">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType/ValueDecTo">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Merkmale"/>
+                            <PropertyValue Property="ID" String="Characs"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Merkmal"/>
+                        <PropertyValue Property="TypeNamePlural" String="Merkmale"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Klassenmerkmal"/>
+                                <PropertyValue Property="Value" Path="CharacName"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CharacName"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CharacDescription"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValueChar"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Merkmal"/>
+                            <PropertyValue Property="Value" Path="CharacInfo"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ValueChar"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocClassType/ObjectId">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocClassType/Clint">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocClassType/StandardClass">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocClassType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Klassen"/>
+                            <PropertyValue Property="ID" String="Classes"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Klasse"/>
+                        <PropertyValue Property="TypeNamePlural" String="Klassen"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Klasse(n)"/>
+                                <PropertyValue Property="Value" Path="ClassNum"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ClassNum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Klassenbeschreibung"/>
+                            <PropertyValue Property="Value" Path="ClassBez"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ClassType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Status"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ClassNum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Bezeichnung"/>
+                            <PropertyValue Property="Value" Path="ClassBez"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ClassType"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Status"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_MeasuringPointType/Equipment">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_MeasuringPointType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Messpunkte"/>
+                            <PropertyValue Property="ID" String="MPoint"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Messbelege"/>
+                            <PropertyValue Property="ID" String="Table-MDoc"/>
+                            <PropertyValue Property="Target" String="UI.FACET$2$">
+                                <Annotation Term="Core.Messages">
+                                    <Collection>
+                                        <Record>
+                                            <PropertyValue Property="code" String="SADL_GW_EXP_VOCAN-000"/>
+                                            <PropertyValue Property="message" String="NavigatEigensch. '_MDoc' v. Annotation 'UI.FACET$2$' in Proj./View '/DSC/C_EAM_MeasuringPoint' n. gefunden"/>
+                                            <PropertyValue Property="severity" String="error"/>
+                                        </Record>
+                                    </Collection>
+                                </Annotation>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Admin-Daten"/>
+                            <PropertyValue Property="ID" String="Fieldgroup-Admin"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FieldgroupAdmin"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="FieldgroupAdmin">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreationDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="CreatedByUser"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastChangeDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="LastChangedByUser"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Messpunkt"/>
+                        <PropertyValue Property="TypeNamePlural" String="Messpunkte"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Messpunkt"/>
+                                <PropertyValue Property="Value" Path="MeasuringPoint"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPoint"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointPositionNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointCategory"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointIsCounter"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointIsInactive"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointDecimalPlaces"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointDescription"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Angelegt am"/>
+                            <PropertyValue Property="Value" Path="CreationDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Angelegt von"/>
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Letzte Änderung"/>
+                            <PropertyValue Property="Value" Path="LastChangeDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Geändert von"/>
+                            <PropertyValue Property="Value" Path="LastChangedByUser"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPoint"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointPositionNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointCategory"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointIsCounter"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointIsInactive"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointDecimalPlaces"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MeasuringPointDescription"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

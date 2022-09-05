@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="DSC.S4EAM_DEVLOC_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="xDSCxC_BKA_IMRC_MRNote_VHType" sap:label="DSC: BKA Wertehilfe Ablesehinweise" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MeterReadingNote"/>
+                </Key>
+                <Property Name="MeterReadingNote" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Ablesehinweis" sap:quickinfo="DSC: BKA Ablesehinweis"/>
+                <Property Name="MeterReadingNoteCtrl" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="MR note control" sap:quickinfo="Control of follow-up action for MR result with MR note"/>
+                <Property Name="MeterReadingNoteDesc" Type="Edm.String" MaxLength="50" sap:label="Beschreibung" sap:quickinfo="Text for meter reading note"/>
+            </EntityType>
+            <EntityType Name="xDSCxC_EAM_DeviceType" sap:label="Fiori List App: Device Projection" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Equipment"/>
+                    <PropertyRef Name="DeviceLocation"/>
+                    <PropertyRef Name="ValidityEndDate"/>
+                </Key>
+                <Property Name="removeDevice_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="replaceDevice_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="reverseInstall_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="reverseReplacement_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Equipment" Type="Edm.String" Nullable="false" MaxLength="18" sap:display-format="UpperCase" sap:label="Equipment" sap:quickinfo="Equipment Number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DeviceLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Technischer Platz" sap:quickinfo="DSC: EAM UI - Techn. Platz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ValidityEndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To Date" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PositionAmDevLoc" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Position" sap:quickinfo="Equipment position at InstallLoc (Superior Equip./FunctLoc)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SerialNumber" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Gerätenummer" sap:quickinfo="DSC: EAM UI - Geräteummer des Equipments" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number" sap:creatable="false" sap:updatable="false" sap:value-list="standard"/>
+                <Property Name="ValidityStartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="Valid-From Date" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PeriodSqNum" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="UsgePerConsecNo." sap:quickinfo="Consecutive numbering of EquipUsagePeriods on same day"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address Number"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country/Region Key" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City postal code" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="40" sap:label="City" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="60" sap:label="Street" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HouseNumberSupplementText" Type="Edm.String" MaxLength="10" sap:label="Supplement" sap:quickinfo="House number supplement" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Region" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Region" sap:quickinfo="Region (State, Province, County)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Name of Person Responsible for Creating the Object" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the record was created" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By" sap:quickinfo="Name of Person Who Changed Object" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="0" sap:label="Letzte Änderung" sap:quickinfo="UTC Time Stamp in Short Form (YYYYMMDDhhmmss)" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="to_Characs" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_CB16A23523BC9E9E446E98C8A535980C" FromRole="FromRole_assoc_CB16A23523BC9E9E446E98C8A535980C" ToRole="ToRole_assoc_CB16A23523BC9E9E446E98C8A535980C"/>
+                <NavigationProperty Name="to_Classes" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_61ABE4D43571BD3B487ED44BF8DC62C1" FromRole="FromRole_assoc_61ABE4D43571BD3B487ED44BF8DC62C1" ToRole="ToRole_assoc_61ABE4D43571BD3B487ED44BF8DC62C1"/>
+                <NavigationProperty Name="to_DevLoc" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_66796AC26730529D8D00A96A3D75708B" FromRole="FromRole_assoc_66796AC26730529D8D00A96A3D75708B" ToRole="ToRole_assoc_66796AC26730529D8D00A96A3D75708B"/>
+                <NavigationProperty Name="to_MPoint" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_B3E040082564ECC41875525269B42F88" FromRole="FromRole_assoc_B3E040082564ECC41875525269B42F88" ToRole="ToRole_assoc_B3E040082564ECC41875525269B42F88"/>
+            </EntityType>
+            <EntityType Name="xDSCxC_EAM_DevLocType" sap:label="Projection Geräteplatz" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="FunctionalLocation"/>
+                </Key>
+                <Property Name="installDevice_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FunctionalLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Technischer Platz" sap:quickinfo="DSC: EAM UI - Techn. Platz"/>
+                <Property Name="FunctionalLocationCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="FunctLocCategory" sap:quickinfo="Functional location category"/>
+                <Property Name="FuncLocationStructure" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Structure indicator" sap:quickinfo="Functional Location Structure Indicator"/>
+                <Property Name="SuperiorFunctionalLocation" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Technischer Platz" sap:quickinfo="DSC: EAM UI - Techn. Platz"/>
+                <Property Name="TechnicalObjectType" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Object Type" sap:quickinfo="Type of Technical Object"/>
+                <Property Name="FunctionalLocationPosition" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Position in object" sap:quickinfo="Position in superior technical object"/>
+                <Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Start-up date" sap:quickinfo="Start-up Date of the Technical Object"/>
+                <Property Name="ObjectText" Type="Edm.String" MaxLength="40" sap:label="FunctLocDescrip." sap:quickinfo="Description of functional location"/>
+                <Property Name="MaintObjectInternalID" Type="Edm.String" MaxLength="22" sap:display-format="UpperCase" sap:label="Object number"/>
+                <Property Name="Iloan" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Loc/Acct Assignment" sap:quickinfo="Location and account assignment for technical object"/>
+                <Property Name="AddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Address Number"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country/Region Key"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City postal code"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="60" sap:label="Street"/>
+                <Property Name="HouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
+                <Property Name="HouseNumberSupplementText" Type="Edm.String" MaxLength="10" sap:label="Supplement" sap:quickinfo="House number supplement"/>
+                <Property Name="Region" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Region" sap:quickinfo="Region (State, Province, County)"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="Name of User Who Created the Object"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the object was created"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed by" sap:quickinfo="Name of the user who last changed the object"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="0" sap:label="Letzte Änderung" sap:quickinfo="UTC Time Stamp in Short Form (YYYYMMDDhhmmss)"/>
+                <NavigationProperty Name="to_Characs" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_572FD8D3EB96CA5407D08F515D8F8D76" FromRole="FromRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76" ToRole="ToRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76"/>
+                <NavigationProperty Name="to_Classes" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_614A4C979680CD222F769AA9F753D769" FromRole="FromRole_assoc_614A4C979680CD222F769AA9F753D769" ToRole="ToRole_assoc_614A4C979680CD222F769AA9F753D769"/>
+                <NavigationProperty Name="to_Device" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_A902947E028720AE549C68197B0E6381" FromRole="FromRole_assoc_A902947E028720AE549C68197B0E6381" ToRole="ToRole_assoc_A902947E028720AE549C68197B0E6381"/>
+            </EntityType>
+            <EntityType Name="xDSCxC_EAM_FuncLocCharacDEVType" sap:label="Projection Klassenmerkmalle EAM-Gerät" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Equipment"/>
+                    <PropertyRef Name="DeviceLocation"/>
+                    <PropertyRef Name="ValidityEndDate"/>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="CharacName"/>
+                    <PropertyRef Name="Clint"/>
+                </Key>
+                <Property Name="Equipment" Type="Edm.String" Nullable="false" MaxLength="18" sap:display-format="UpperCase" sap:label="Equipment" sap:quickinfo="Equipment Number"/>
+                <Property Name="DeviceLocation" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Technischer Platz" sap:quickinfo="DSC: EAM UI - Techn. Platz"/>
+                <Property Name="ValidityEndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To Date"/>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="90" sap:label="Object" sap:quickinfo="Key of Object to be Classified" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CharacName" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:text="CharacDescription" sap:label="Characteristic Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Clint" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="Internal class no." sap:quickinfo="Internal Class Number"/>
+                <Property Name="CharacCounter" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Int. counter" sap:quickinfo="Internal Counter for Archiving Objects by ECM"/>
+                <Property Name="ClassType" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Class Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Posnr" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Item number"/>
+                <Property Name="Atinn" Type="Edm.String" MaxLength="30" sap:display-format="NonNegative" sap:label="Internal char no." sap:quickinfo="Internal characteristic" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CharacDescription" Type="Edm.String" MaxLength="30" sap:label="Char. description" sap:quickinfo="Characteristic description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CharacInfo" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:text="CharacDescription" sap:label="Characteristic Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DataType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Format" sap:quickinfo="Data type of characteristic" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="FieldLen" Type="Edm.Int16" sap:label="Number of Characters"/>
+                <Property Name="Decimals" Type="Edm.Int16" sap:label="Decimal Places" sap:quickinfo="Number of Decimal Places"/>
+                <Property Name="ValueChar" Type="Edm.String" MaxLength="70" sap:label="Characteristic Value"/>
+                <Property Name="ValueDecFrom" Type="Edm.Decimal" Precision="31" Scale="14" sap:label="LowrBndry Nmrc" sap:quickinfo="Lower Boundary for Numeric Field"/>
+                <Property Name="ValueDecTo" Type="Edm.Decimal" Precision="31" Scale="14" sap:label="UprBndry Nmrc" sap:quickinfo="Upper Boundary for Numeric Field"/>
+                <NavigationProperty Name="to_Device" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_C17CA52CFE403B566473B9EB975018BA" FromRole="FromRole_assoc_C17CA52CFE403B566473B9EB975018BA" ToRole="ToRole_assoc_C17CA52CFE403B566473B9EB975018BA"/>
+            </EntityType>
+            <EntityType Name="xDSCxC_EAM_FuncLocCharacDLType" sap:label="Projection Klassenmerkmalle Geräteplatz" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="CharacName"/>
+                    <PropertyRef Name="Clint"/>
+                </Key>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="90" sap:label="Object" sap:quickinfo="Key of Object to be Classified" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CharacName" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Characteristic Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Clint" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="Internal class no." sap:quickinfo="Internal Class Number"/>
+                <Property Name="CharacCounter" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Int. counter" sap:quickinfo="Internal Counter for Archiving Objects by ECM"/>
+                <Property Name="ClassType" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Class Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Posnr" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Item number"/>
+                <Property Name="Atinn" Type="Edm.String" MaxLength="30" sap:display-format="NonNegative" sap:label="Internal char no." sap:quickinfo="Internal characteristic" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CharacDescription" Type="Edm.String" MaxLength="30" sap:label="Char. description" sap:quickinfo="Characteristic description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CharacInfo" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:text="CharacDescription" sap:label="Characteristic Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DataType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Format" sap:quickinfo="Data type of characteristic" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="FieldLen" Type="Edm.Int16" sap:label="Number of Characters"/>
+                <Property Name="Decimals" Type="Edm.Int16" sap:label="Decimal Places" sap:quickinfo="Number of Decimal Places"/>
+                <Property Name="ValueChar" Type="Edm.String" MaxLength="70" sap:label="Characteristic Value"/>
+                <Property Name="ValueDecFrom" Type="Edm.Decimal" Precision="31" Scale="14" sap:label="LowrBndry Nmrc" sap:quickinfo="Lower Boundary for Numeric Field"/>
+                <Property Name="ValueDecTo" Type="Edm.Decimal" Precision="31" Scale="14" sap:label="UprBndry Nmrc" sap:quickinfo="Upper Boundary for Numeric Field"/>
+                <NavigationProperty Name="to_DeviceLocation" Relationship="DSC.S4EAM_DEVLOC_SRV.assoc_8A15E9983EEE4320F8AA96B6D94465A3" FromRole="FromRole_assoc_8A15E9983EEE4320F8AA96B6D94465A3" ToRole="ToRole_assoc_8A15E9983EEE4320F8AA96B6D94465A3"/>
+            </EntityType>
+            <EntityType Name="xDSCxC_EAM_FuncLocClassType" sap:label="Projection Klasse zu techn. Objekt" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ObjectId"/>
+                    <PropertyRef Name="Clint"/>
+                </Key>
+                <Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="90" sap:label="Object" sap:quickinfo="Key of Object to be Classified"/>
+                <Property Name="Clint" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="Internal class no." sap:quickinfo="Internal Class Number"/>
+                <Property Name="ClassType" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Class Type"/>
+                <Property Name="ClassNum" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Class" sap:quickinfo="Class number"/>
+                <Property Name="ClassBez" Type="Edm.String" MaxLength="40" sap:label="Keyword" sap:quickinfo="Keywords"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Status" sap:quickinfo="Classification status"/>
+                <Property Name="StandardClass" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Standard class" sap:quickinfo="Indicator: Standard Class"/>
+            </EntityType>
+            <EntityType Name="xDSCxC_EAM_MeasuringPointType" sap:label="Projection EAM Messpunkt" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MeasuringPoint"/>
+                    <PropertyRef Name="Equipment"/>
+                </Key>
+                <Property Name="MeasuringPoint" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Measuring point" sap:quickinfo="Measuring Point"/>
+                <Property Name="Equipment" Type="Edm.String" Nullable="false" MaxLength="18" sap:display-format="UpperCase" sap:label="Equipment" sap:quickinfo="Equipment Number"/>
+                <Property Name="MeasuringPointObjectIdentifier" Type="Edm.String" MaxLength="22" sap:display-format="UpperCase" sap:label="OBjNo.MeasPointObj." sap:quickinfo="Object Number for the Measuring Point Object"/>
+                <Property Name="MeasuringPointPositionNumber" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Measurement position" sap:quickinfo="Position Number of the Object Measuring Point (Sort Field)"/>
+                <Property Name="MeasuringPointCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="MeasPointCategory" sap:quickinfo="Measuring Point Category"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the object was created"/>
+                <Property Name="LastChangeDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed on" sap:quickinfo="Date on which the object was last changed"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="AuthorizGroup" sap:quickinfo="Technical Object Authorization Group"/>
+                <Property Name="MeasuringPointIsInactive" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="MeasPoint inactive" sap:quickinfo="Indicator: Measuring Point Inactive"/>
+                <Property Name="MeasuringPointIsCounter" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="MeasPoint is counter" sap:quickinfo="Indicator to Show that Measuring Point Is a Counter"/>
+                <Property Name="MultiLevelDeletionLogicStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Deletion flag" sap:quickinfo="Deletion Flag for 2-Level Deletion Logic"/>
+                <Property Name="Assembly" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Assembly" sap:quickinfo="Assembly for Localization of Measuring Point"/>
+                <Property Name="ReferenceMeasuringPoint" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Reference Meas.Pt"/>
+                <Property Name="MsrgPtInternalCharacteristic" Type="Edm.String" MaxLength="30" sap:display-format="NonNegative" sap:label="Internal char no." sap:quickinfo="Internal characteristic"/>
+                <Property Name="MeasuringPointExponent" Type="Edm.Int16" sap:label="FloatPointExp." sap:quickinfo="Power of Ten Exponent for Floating Point Display"/>
+                <Property Name="MeasuringPointDecimalPlaces" Type="Edm.Int16" sap:label="Decimal places" sap:quickinfo="Number of Decimal Places for Number Display"/>
+                <Property Name="MeasuringPointMinimumThreshold" Type="Edm.Double" sap:label="Lower range limit" sap:quickinfo="Lower Measurement Range Limit/Minimum Total Counter Reading"/>
+                <Property Name="MinimumThresholdIsEntered" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contains value" sap:quickinfo="Indicator: Associated Number Field Contains a Value"/>
+                <Property Name="MeasuringPointMaximumThreshold" Type="Edm.Double" sap:label="Upper range limit" sap:quickinfo="Upper Measurement Range Limit/Maximum Total Counter Reading"/>
+                <Property Name="MaximumThresholdIsEntered" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contains value" sap:quickinfo="Indicator: Associated Number Field Contains a Value"/>
+                <Property Name="MeasurementRangeUnit" Type="Edm.String" MaxLength="3" sap:label="MeasurmntRangeUnit" sap:quickinfo="Measurement Range Unit" sap:semantics="unit-of-measure"/>
+                <Property Name="MsrgPtIsCountingBackwards" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Count backwards" sap:quickinfo="Indicator: Counter Runs Backwards"/>
+                <Property Name="MsmtRdngSourceMeasuringPoint" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Reading trans. fr." sap:quickinfo="Measuring Point from Which Meas. Reading Was Transferred"/>
+                <Property Name="CounterOverflowRdngThreshold" Type="Edm.Double" sap:label="CountOverflwReadg" sap:quickinfo="Counter Overflow Reading in SI Unit"/>
+                <Property Name="OverflowReadingIsEntered" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contains value" sap:quickinfo="Indicator: Associated Number Field Contains a Value"/>
+                <Property Name="MeasuringPointAnnualEstimate" Type="Edm.Double" sap:label="Annual estimate" sap:quickinfo="Annual Estimate in SI Unit"/>
+                <Property Name="MsrgPtAnnualEstimateIsEntered" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contains value" sap:quickinfo="Indicator: Associated Number Field Contains a Value"/>
+                <Property Name="MeasuringPointCatalogType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Catalog type" sap:quickinfo="Catalog Type - Measurement Reading Valuation Code"/>
+                <Property Name="MeasuringPointCodeGroup" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Code group" sap:quickinfo="Code Group - Measurement Reading Valuation Code"/>
+                <Property Name="ValuationCodeIsSufficient" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="ValCode sufficient" sap:quickinfo="Indicator: Valuation Code Sufficient for Measurmnt. Document"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="MeasuringPointDescription" Type="Edm.String" MaxLength="40" sap:label="Description" sap:quickinfo="Description of Measuring Point"/>
+                <Property Name="MeasuringPointShortText" Type="Edm.String" MaxLength="40" sap:label="Text" sap:quickinfo="Aditional Short Text for Measuring Point"/>
+                <Property Name="MeasuringPointIsReference" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="RefMeasuringPoint" sap:quickinfo="Indicator: MeasPoint Is a Reference Measuring Point"/>
+                <Property Name="MeasurementTransferIsSupported" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Supported" sap:quickinfo="Indicator That Measurement Reading Transfer is Supported"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="Name of User Who Created the Object"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed by" sap:quickinfo="Name of the user who last changed the object"/>
+                <Property Name="MeasuringPointHasLongText" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Long text exists" sap:quickinfo="Long Text Exists"/>
+                <Property Name="MeasuringPointObjectType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Object Type"/>
+                <Property Name="MeasuringPointTargetValue" Type="Edm.Double" sap:label="Target value" sap:quickinfo="Measuring Point Target Value"/>
+                <Property Name="TargetValueIsEntered" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Contains value" sap:quickinfo="Indicator: Associated Number Field Contains a Value"/>
+            </EntityType>
+            <EntityType Name="I_MaterialStdVHType" sap:label="Material" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:text="Material_Text" sap:label="Material" sap:quickinfo="Material Number"/>
+                <Property Name="Material_Text" Type="Edm.String" MaxLength="40" sap:label="Material Description" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <ComplexType Name="DummyFunctionImportResult">
+                <Property Name="IsInvalid" Type="Edm.Boolean" sap:label="TRUE"/>
+            </ComplexType>
+            <Association Name="assoc_8A15E9983EEE4320F8AA96B6D94465A3" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType" Multiplicity="1" Role="FromRole_assoc_8A15E9983EEE4320F8AA96B6D94465A3"/>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType" Multiplicity="1" Role="ToRole_assoc_8A15E9983EEE4320F8AA96B6D94465A3"/>
+            </Association>
+            <Association Name="assoc_572FD8D3EB96CA5407D08F515D8F8D76" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType" Multiplicity="1" Role="FromRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType" Multiplicity="*" Role="ToRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76">
+                        <PropertyRef Name="FunctionalLocation"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76">
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_614A4C979680CD222F769AA9F753D769" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType" Multiplicity="1" Role="FromRole_assoc_614A4C979680CD222F769AA9F753D769"/>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocClassType" Multiplicity="*" Role="ToRole_assoc_614A4C979680CD222F769AA9F753D769"/>
+            </Association>
+            <Association Name="assoc_A902947E028720AE549C68197B0E6381" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType" Multiplicity="1" Role="FromRole_assoc_A902947E028720AE549C68197B0E6381">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" Multiplicity="*" Role="ToRole_assoc_A902947E028720AE549C68197B0E6381"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_A902947E028720AE549C68197B0E6381">
+                        <PropertyRef Name="FunctionalLocation"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_A902947E028720AE549C68197B0E6381">
+                        <PropertyRef Name="DeviceLocation"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_61ABE4D43571BD3B487ED44BF8DC62C1" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" Multiplicity="1" Role="FromRole_assoc_61ABE4D43571BD3B487ED44BF8DC62C1"/>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocClassType" Multiplicity="*" Role="ToRole_assoc_61ABE4D43571BD3B487ED44BF8DC62C1"/>
+            </Association>
+            <Association Name="assoc_66796AC26730529D8D00A96A3D75708B" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" Multiplicity="1" Role="FromRole_assoc_66796AC26730529D8D00A96A3D75708B"/>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType" Multiplicity="1" Role="ToRole_assoc_66796AC26730529D8D00A96A3D75708B"/>
+            </Association>
+            <Association Name="assoc_B3E040082564ECC41875525269B42F88" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" Multiplicity="1" Role="FromRole_assoc_B3E040082564ECC41875525269B42F88"/>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_MeasuringPointType" Multiplicity="*" Role="ToRole_assoc_B3E040082564ECC41875525269B42F88"/>
+            </Association>
+            <Association Name="assoc_CB16A23523BC9E9E446E98C8A535980C" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" Multiplicity="1" Role="FromRole_assoc_CB16A23523BC9E9E446E98C8A535980C">
+                    <OnDelete Action="Cascade"/>
+                </End>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType" Multiplicity="*" Role="ToRole_assoc_CB16A23523BC9E9E446E98C8A535980C"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_assoc_CB16A23523BC9E9E446E98C8A535980C">
+                        <PropertyRef Name="ValidityEndDate"/>
+                        <PropertyRef Name="DeviceLocation"/>
+                        <PropertyRef Name="Equipment"/>
+                    </Principal>
+                    <Dependent Role="ToRole_assoc_CB16A23523BC9E9E446E98C8A535980C">
+                        <PropertyRef Name="ValidityEndDate"/>
+                        <PropertyRef Name="DeviceLocation"/>
+                        <PropertyRef Name="ObjectId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_C17CA52CFE403B566473B9EB975018BA" sap:content-version="1">
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType" Multiplicity="1" Role="FromRole_assoc_C17CA52CFE403B566473B9EB975018BA"/>
+                <End Type="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" Multiplicity="1" Role="ToRole_assoc_C17CA52CFE403B566473B9EB975018BA"/>
+            </Association>
+            <EntityContainer Name="DSC_S4EAM_DEVLOC_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="xDSCxC_BKA_IMRC_MRNote_VH" EntityType="DSC.S4EAM_DEVLOC_SRV.xDSCxC_BKA_IMRC_MRNote_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="xDSCxC_EAM_Device" EntityType="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="xDSCxC_EAM_DevLoc" EntityType="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="xDSCxC_EAM_FuncLocCharacDEV" EntityType="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDEVType" sap:creatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="xDSCxC_EAM_FuncLocCharacDL" EntityType="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocCharacDLType" sap:creatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="xDSCxC_EAM_FuncLocClass" EntityType="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_FuncLocClassType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="xDSCxC_EAM_MeasuringPoint" EntityType="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_MeasuringPointType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="I_MaterialStdVH" EntityType="DSC.S4EAM_DEVLOC_SRV.I_MaterialStdVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_572FD8D3EB96CA5407D08F515D8F8D76" Association="DSC.S4EAM_DEVLOC_SRV.assoc_572FD8D3EB96CA5407D08F515D8F8D76" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_DevLoc" Role="FromRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76"/>
+                    <End EntitySet="xDSCxC_EAM_FuncLocCharacDL" Role="ToRole_assoc_572FD8D3EB96CA5407D08F515D8F8D76"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_CB16A23523BC9E9E446E98C8A535980C" Association="DSC.S4EAM_DEVLOC_SRV.assoc_CB16A23523BC9E9E446E98C8A535980C" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_Device" Role="FromRole_assoc_CB16A23523BC9E9E446E98C8A535980C"/>
+                    <End EntitySet="xDSCxC_EAM_FuncLocCharacDEV" Role="ToRole_assoc_CB16A23523BC9E9E446E98C8A535980C"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_66796AC26730529D8D00A96A3D75708B" Association="DSC.S4EAM_DEVLOC_SRV.assoc_66796AC26730529D8D00A96A3D75708B" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_Device" Role="FromRole_assoc_66796AC26730529D8D00A96A3D75708B"/>
+                    <End EntitySet="xDSCxC_EAM_DevLoc" Role="ToRole_assoc_66796AC26730529D8D00A96A3D75708B"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_8A15E9983EEE4320F8AA96B6D94465A3" Association="DSC.S4EAM_DEVLOC_SRV.assoc_8A15E9983EEE4320F8AA96B6D94465A3" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_FuncLocCharacDL" Role="FromRole_assoc_8A15E9983EEE4320F8AA96B6D94465A3"/>
+                    <End EntitySet="xDSCxC_EAM_DevLoc" Role="ToRole_assoc_8A15E9983EEE4320F8AA96B6D94465A3"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_B3E040082564ECC41875525269B42F88" Association="DSC.S4EAM_DEVLOC_SRV.assoc_B3E040082564ECC41875525269B42F88" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_Device" Role="FromRole_assoc_B3E040082564ECC41875525269B42F88"/>
+                    <End EntitySet="xDSCxC_EAM_MeasuringPoint" Role="ToRole_assoc_B3E040082564ECC41875525269B42F88"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_614A4C979680CD222F769AA9F753D769" Association="DSC.S4EAM_DEVLOC_SRV.assoc_614A4C979680CD222F769AA9F753D769" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_DevLoc" Role="FromRole_assoc_614A4C979680CD222F769AA9F753D769"/>
+                    <End EntitySet="xDSCxC_EAM_FuncLocClass" Role="ToRole_assoc_614A4C979680CD222F769AA9F753D769"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_C17CA52CFE403B566473B9EB975018BA" Association="DSC.S4EAM_DEVLOC_SRV.assoc_C17CA52CFE403B566473B9EB975018BA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_FuncLocCharacDEV" Role="FromRole_assoc_C17CA52CFE403B566473B9EB975018BA"/>
+                    <End EntitySet="xDSCxC_EAM_Device" Role="ToRole_assoc_C17CA52CFE403B566473B9EB975018BA"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_61ABE4D43571BD3B487ED44BF8DC62C1" Association="DSC.S4EAM_DEVLOC_SRV.assoc_61ABE4D43571BD3B487ED44BF8DC62C1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_Device" Role="FromRole_assoc_61ABE4D43571BD3B487ED44BF8DC62C1"/>
+                    <End EntitySet="xDSCxC_EAM_FuncLocClass" Role="ToRole_assoc_61ABE4D43571BD3B487ED44BF8DC62C1"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_A902947E028720AE549C68197B0E6381" Association="DSC.S4EAM_DEVLOC_SRV.assoc_A902947E028720AE549C68197B0E6381" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xDSCxC_EAM_DevLoc" Role="FromRole_assoc_A902947E028720AE549C68197B0E6381"/>
+                    <End EntitySet="xDSCxC_EAM_Device" Role="ToRole_assoc_A902947E028720AE549C68197B0E6381"/>
+                </AssociationSet>
+                <FunctionImport Name="removeDevice" ReturnType="DSC.S4EAM_DEVLOC_SRV.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" sap:applicable-path="removeDevice_ac">
+                    <Parameter Name="Equipment" Type="Edm.String" Mode="In" MaxLength="18" sap:label="Equipment"/>
+                    <Parameter Name="DeviceLocation" Type="Edm.String" Mode="In" MaxLength="30" sap:label="Technischer Platz"/>
+                    <Parameter Name="ValidityEndDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Valid To" sap:display-format="Date"/>
+                    <Parameter Name="ActionDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:label="Date" sap:display-format="Date"/>
+                    <Parameter Name="CounterValue" Type="Edm.String" Mode="In" MaxLength="22" Nullable="true" sap:label="MeasRdg in EntryUnit"/>
+                    <Parameter Name="CounterCheckValue" Type="Edm.String" Mode="In" MaxLength="30" Nullable="true" sap:label="Prüfzahl"/>
+                    <Parameter Name="ReadingNote" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true" sap:value-list="fixed-values" sap:label="Ablese-Hinweis"/>
+                </FunctionImport>
+                <FunctionImport Name="replaceDevice" ReturnType="DSC.S4EAM_DEVLOC_SRV.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" sap:applicable-path="replaceDevice_ac">
+                    <Parameter Name="Equipment" Type="Edm.String" Mode="In" MaxLength="18" sap:label="Equipment"/>
+                    <Parameter Name="DeviceLocation" Type="Edm.String" Mode="In" MaxLength="30" sap:label="Technischer Platz"/>
+                    <Parameter Name="ValidityEndDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Valid To" sap:display-format="Date"/>
+                    <Parameter Name="SerialNumberNew" Type="Edm.String" Mode="In" MaxLength="18" Nullable="true" sap:label="Serial Number"/>
+                    <Parameter Name="MaterialNew" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true" sap:value-list="standard" sap:label="Material"/>
+                    <Parameter Name="ActionDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:label="Date" sap:display-format="Date"/>
+                    <Parameter Name="CounterValue" Type="Edm.String" Mode="In" MaxLength="22" Nullable="true" sap:label="MeasRdg in EntryUnit"/>
+                    <Parameter Name="CounterCheckValue" Type="Edm.String" Mode="In" MaxLength="30" Nullable="true" sap:label="Prüfzahl"/>
+                    <Parameter Name="ReadingNote" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true" sap:value-list="fixed-values" sap:label="Ablese-Hinweis"/>
+                    <Parameter Name="CounterValueOld" Type="Edm.String" Mode="In" MaxLength="22" Nullable="true" sap:label="MeasRdg in EntryUnit"/>
+                    <Parameter Name="CounterCheckValueOld" Type="Edm.String" Mode="In" MaxLength="30" Nullable="true" sap:label="Prüfzahl"/>
+                    <Parameter Name="ReadingNoteOld" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true" sap:value-list="fixed-values" sap:label="Ablese-Hinweis"/>
+                    <Parameter Name="Stichtag" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:label="Date" sap:display-format="Date"/>
+                    <Parameter Name="Montagedatum" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:label="Date" sap:display-format="Date"/>
+                    <Parameter Name="Eichjahr" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="reverseInstall" ReturnType="DSC.S4EAM_DEVLOC_SRV.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" sap:applicable-path="reverseInstall_ac">
+                    <Parameter Name="Equipment" Type="Edm.String" Mode="In" MaxLength="18" sap:label="Equipment"/>
+                    <Parameter Name="DeviceLocation" Type="Edm.String" Mode="In" MaxLength="30" sap:label="Technischer Platz"/>
+                    <Parameter Name="ValidityEndDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Valid To" sap:display-format="Date"/>
+                </FunctionImport>
+                <FunctionImport Name="reverseReplacement" ReturnType="DSC.S4EAM_DEVLOC_SRV.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType" sap:applicable-path="reverseReplacement_ac">
+                    <Parameter Name="Equipment" Type="Edm.String" Mode="In" MaxLength="18" sap:label="Equipment"/>
+                    <Parameter Name="DeviceLocation" Type="Edm.String" Mode="In" MaxLength="30" sap:label="Technischer Platz"/>
+                    <Parameter Name="ValidityEndDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Valid To" sap:display-format="Date"/>
+                </FunctionImport>
+                <FunctionImport Name="installDevice" ReturnType="DSC.S4EAM_DEVLOC_SRV.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DevLocType" sap:applicable-path="installDevice_ac">
+                    <Parameter Name="FunctionalLocation" Type="Edm.String" Mode="In" MaxLength="30" sap:label="Technischer Platz"/>
+                    <Parameter Name="SerialNumberNew" Type="Edm.String" Mode="In" MaxLength="18" Nullable="true" sap:label="Serial Number"/>
+                    <Parameter Name="MaterialNew" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true" sap:value-list="standard" sap:label="Material"/>
+                    <Parameter Name="PositionNew" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true" sap:label="Position"/>
+                    <Parameter Name="ActionDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:label="Date" sap:display-format="Date"/>
+                    <Parameter Name="CounterValue" Type="Edm.String" Mode="In" MaxLength="22" Nullable="true" sap:label="MeasRdg in EntryUnit"/>
+                    <Parameter Name="CounterCheckValue" Type="Edm.String" Mode="In" MaxLength="30" Nullable="true" sap:label="Prüfzahl"/>
+                    <Parameter Name="ReadingNote" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true" sap:value-list="fixed-values" sap:label="Ablese-Hinweis"/>
+                    <Parameter Name="Stichtag" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:label="Date" sap:display-format="Date"/>
+                    <Parameter Name="Montagedatum" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:label="Date" sap:display-format="Date"/>
+                    <Parameter Name="Eichjahr" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.xDSCxC_EAM_DeviceType/Material" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Material"/>
+                        <PropertyValue Property="CollectionPath" String="I_MaterialStdVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Material"/>
+                                    <PropertyValue Property="ValueListProperty" String="Material"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Material_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/removeDevice/ReadingNote" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="DSC: BKA Wertehilfe Ablesehinweise"/>
+                        <PropertyValue Property="CollectionPath" String="xDSCxC_BKA_IMRC_MRNote_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ReadingNote"/>
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNote"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNoteDesc"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/replaceDevice/MaterialNew" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Material"/>
+                        <PropertyValue Property="CollectionPath" String="I_MaterialStdVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MaterialNew"/>
+                                    <PropertyValue Property="ValueListProperty" String="Material"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Material_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/replaceDevice/ReadingNote" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="DSC: BKA Wertehilfe Ablesehinweise"/>
+                        <PropertyValue Property="CollectionPath" String="xDSCxC_BKA_IMRC_MRNote_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ReadingNote"/>
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNote"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNoteDesc"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/replaceDevice/ReadingNoteOld" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="DSC: BKA Wertehilfe Ablesehinweise"/>
+                        <PropertyValue Property="CollectionPath" String="xDSCxC_BKA_IMRC_MRNote_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ReadingNoteOld"/>
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNote"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNoteDesc"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/installDevice/MaterialNew" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Material"/>
+                        <PropertyValue Property="CollectionPath" String="I_MaterialStdVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MaterialNew"/>
+                                    <PropertyValue Property="ValueListProperty" String="Material"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Material_Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/installDevice/ReadingNote" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="DSC: BKA Wertehilfe Ablesehinweise"/>
+                        <PropertyValue Property="CollectionPath" String="xDSCxC_BKA_IMRC_MRNote_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ReadingNote"/>
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNote"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="MeterReadingNoteDesc"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/xDSCxC_EAM_DevLoc" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>installDevice_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>installDevice_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="DSC.S4EAM_DEVLOC_SRV.DSC_S4EAM_DEVLOC_SRV_Entities/xDSCxC_EAM_Device" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>removeDevice_ac</PropertyPath>
+                                <PropertyPath>replaceDevice_ac</PropertyPath>
+                                <PropertyPath>reverseInstall_ac</PropertyPath>
+                                <PropertyPath>reverseReplacement_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>removeDevice_ac</PropertyPath>
+                                <PropertyPath>replaceDevice_ac</PropertyPath>
+                                <PropertyPath>reverseInstall_ac</PropertyPath>
+                                <PropertyPath>reverseReplacement_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/dsc/S4EAM_DEVLOC_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://sl20s4h003.dsc-gmbh.org:50000/sap/opu/odata/dsc/S4EAM_DEVLOC_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
